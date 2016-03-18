@@ -1,0 +1,220 @@
+
+// Bootstrap Variables
+$icon-font-path: '../../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
+
+// Import Bootstrap
+@import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+body {
+	background-color: rgb(233, 234, 237);
+}
+
+.navbar {
+	transition: all .5s .1s;
+	-webkit-font-smoothing: antialiased;
+    font-family: "Verlag-Book","Helvetica Neue",Helvetica,Arial,sans-serif;
+    border: 0;
+    font-size: 16px;
+
+
+
+
+
+}
+
+.navbar-transparent {
+    border-width: 0px;
+    -webkit-box-shadow: 0px 0px;
+    box-shadow: 0px 0px;
+    background-color: rgba(0,0,0,0.0);
+    background-image: -webkit-gradient(linear, 50.00% 0.00%, 50.00% 100.00%, color-stop( 0% , rgba(0,0,0,0.00)),color-stop( 100% , rgba(0,0,0,0.00)));
+    background-image: -webkit-linear-gradient(270deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
+    background-image: linear-gradient(180deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
+
+}
+
+.navbar-default .navbar-brand {
+    color: white;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: white;
+}
+
+.container-header {
+	z-index: 3;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    top: 0;
+}
+
+.content {
+	position: relative;
+	top: 42%;
+
+    color: white;
+    text-align: center;
+    text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+    vertical-align: center;
+    line-height: 1.7;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+
+	h1 {
+		font-size: 200px;
+
+	}
+}
+
+
+
+.navbar-brand {
+	    margin-left: -15px;
+	    color: white;
+    	opacity: 1;
+    	font-weight: 600;
+    	margin: 5px 0px;
+    	padding: 20px 15px;
+    	font-size: 20px;
+    	float: left;
+    	letter-spacing: 0;
+    	height: 50px;
+
+
+}
+
+
+.navbar-right {
+	//float: right;
+
+}
+.navbar-default .navbar-brand {
+    color: rgb(0, 116, 70);
+}
+.navbar-default .navbar-nav > li > a {
+    color: rgb(0, 116, 70);
+}
+
+/// main content ////
+
+
+
+.section-about {
+	padding: 1.875em 0;
+    position: relative;
+    background-color: #FFFFFF;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+}
+
+.icon-container {
+	&:hover {
+		background-color: blue;
+		background: opacity 30%;
+	}
+}
+.about-icon {
+	height: 150px;
+	width: 100%;
+
+	margin: 0 auto;
+    margin-bottom: 20px;
+	display: inline-block;
+	padding: 10px;
+
+
+}
+
+.text-area {
+	padding: 4.375em 0;
+    position: relative;
+    z-index: 3;
+    display: block;
+    background-color: #FFFFFF;
+}
+
+.about-title {
+	text-align: center;
+	max-width: 960px;
+	margin: 0 auto;
+	display: block;
+}
+
+/// menu styling ///
+.panel-default > .panel-heading {
+	background-color: rgb(179, 155, 57);
+	color: rgb(233, 234, 237);
+	height: 60px;
+}
+
+.item-price {
+    float: right;
+}
+
+.add-icon {
+
+        color: black;
+
+
+}
+
+//order shopping car styles
+#orderApp {
+    background-color: #fff;
+    height: 400px;
+    position: relative;
+    top: 30px;
+}
+.cart-header {
+    letter-spacing: 0;
+    border-bottom: #e8e8e8;
+    padding: 15px 20px;
+    text-transform: uppercase;
+}
+
+.cart-item-list {
+
+    padding: 20px;
+
+}
+
+.takeoutordelivery {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-left: 1px solid #e8e8e8;
+    border-right: 1px solid #e8e8e8;
+    border-bottom: 1px solid #e8e8e8;
+    overflow: auto;
+    box-sizing: inherit;
+
+    .delivery{
+        padding: 0 6px;
+        overflow: auto;
+        width: 50%;
+        height: auto;
+        min-height: 87px;
+        margin-right: 0 !important;
+        float: left;
+        display: block;
+    }
+    .cart-icon {
+        color: rgb(0, 116, 70);
+    }
+}
