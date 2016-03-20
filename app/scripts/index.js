@@ -16,4 +16,31 @@ $(function(){
 
   Backbone.history.start();
    $('[data-toggle="tooltip"]').tooltip();
+
+
+   $(window).scroll(function () {
+    var y = $(window).scrollTop(),
+        x = $('.animated').offset().top - 500;
+    if (y > x) {
+        $('.animated').addClass('fadeInUp').removeClass('fadeOutDown');
+    } else {
+        $('.animated').removeClass('fadeInUp').addClass('fadeOutDown');
+    }
+
+
 });
+   $('.icon1').hover(function (){
+    	$('.icon-show1').toggleClass('hidden');
+
+    });
+   $('.icon2').hover(function (){
+    	$('.icon-show2').toggleClass('hidden');
+
+    });
+   $('.icon3').hover(function (){
+    	$('.icon-show3').toggleClass('hidden');
+
+    });
+});
+
+

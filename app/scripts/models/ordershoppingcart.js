@@ -10,6 +10,12 @@ var OrderItem = Backbone.Model.extend({
 
 var OrderItemCollection = Backbone.Collection.extend({
 	model: OrderItem,
+	cartTotal: function(){
+		var addOrder = function(item1, item2) {
+			return item1 + item2.get('price');
+		}
+		return this.reduce(addOrder, 0);
+	}
 	//url:
 });
 

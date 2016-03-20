@@ -8,31 +8,49 @@ require('backbone-react-component');
 var OrderModel = require('../models/ordershoppingcart.js').OrderItemCollection;
 
 var OrderComponent = React.createClass({
+	mixins: [Backbone.React.Component.mixin],
+	getInitialState: function() {
+	    return {
+	    	total: this.getCollection().orderCollection.cartTotal()
+
+
+	};
+},
+
+	handleClick: function(item){
+
+		this.props.removeCartItem(item);
+		this.props.totalCartItems(item);
+
+	},
+
 	render: function() {
+		var orderCollection = this.getCollection().orderCollection;
+		var cartItem = function(item){
+			return (
+				<li className="order-item" key={item.get('cid')}>
+					<span className="order-tite">{item.get('title')} </span>
+					<span className="order-price">${item.get('price')}</span>
+					<a onClick={this.handleClick.bind(this, item)}><span className="fa fa-times remove-order-btn"></span></a>
+
+				</li>
+				);
+		};
+
 		return (
-			<div className="cart">
+			<div className="cart col-md-12">
 				<div className="cart-header">
 						<h3>Your Order</h3>
 				</div>
 				<div className="cart-item-list">
-					<table className="table cart-table">
-							<tbody>
-								<tr>
-									<th>Item</th>
-									<th>Price</th>
-									<th></th>
-									<th>Quantity</th>
-								</tr>
-								<tr>
-									<td>
-										<strong>Subtotal</strong>
-									</td>
-									<td>
-										<strong>$0.00</strong>
-									</td>
-								</tr>
-							</tbody>
-					</table>
+
+							<ul>
+
+										{orderCollection.map(cartItem.bind(this))}
+
+							</ul>
+
+{/*
 					<div className="col-md-12 takeoutordelivery">
 						<div className="col-md-6 delivery">
 							<span><i className="cart-icon fa fa-car"></i></span><br/>
@@ -44,20 +62,28 @@ var OrderComponent = React.createClass({
 							<label htmlFor="takeout">Takeout</label><br/>
 							<input id="takeout" type="radio" />
 						</div>
+					*/}
 
 
 					</div>
+
+						<div className="makeorder col-md-3 col-md-offset-9">
+
+							<span>total: ${this.state.total}</span>
+
+							<span><button>Order</button></span>
+						</div>
 				</div>
-			</div>
+
+
 
 		);
-	}
+
+}
 });
 
-ReactDOM.render (
-  	<OrderComponent collection={OrderModel} />,
-  	$('#orderApp')[0]);
 
-
-module.exports = OrderComponent;
+module.exports = {
+	"OrderComponent": OrderComponent
+};
 
