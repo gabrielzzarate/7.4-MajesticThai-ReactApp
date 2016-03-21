@@ -39,6 +39,7 @@ var OrderComponent = React.createClass({
 
 		return (
 			<div className="cart col-md-12">
+				<div className="row ">
 				<div className="cart-header">
 						<h3>Your Order</h3>
 				</div>
@@ -49,6 +50,7 @@ var OrderComponent = React.createClass({
 										{orderCollection.map(cartItem.bind(this))}
 
 							</ul>
+				</div>
 
 {/*
 					<div className="col-md-12 takeoutordelivery">
@@ -66,13 +68,15 @@ var OrderComponent = React.createClass({
 
 
 					</div>
+					<div className="row">
 
-						<div className="makeorder col-md-3 col-md-offset-9">
+						<div className="makeorder col-md-4 col-md-offset-7">
 
 							<span>total: ${this.state.total}</span>
 
-							<span><button>Order</button></span>
+							<span><button className="btn btn-default">Order</button></span>
 						</div>
+				</div>
 				</div>
 
 
