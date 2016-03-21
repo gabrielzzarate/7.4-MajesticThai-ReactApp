@@ -112,7 +112,7 @@ var MenuComponent = React.createClass({
 		</div>
 			<div className="page-header col-md-3">
 					<div id="orderApp">
-						<OrderComponent  removeCartItem={this.removeCartItem} totalCartItems={this.totalCartItems}/>
+						<OrderComponent  removeCartItem={this.removeCartItem} total={this.state.total} totalCartItems={this.totalCartItems}/>
 					</div>
 		</div>
 

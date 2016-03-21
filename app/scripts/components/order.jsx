@@ -9,13 +9,7 @@ var OrderModel = require('../models/ordershoppingcart.js').OrderItemCollection;
 
 var OrderComponent = React.createClass({
 	mixins: [Backbone.React.Component.mixin],
-	getInitialState: function() {
-	    return {
-	    	total: this.getCollection().orderCollection.cartTotal()
 
-
-	};
-},
 
 	handleClick: function(item){
 
@@ -72,7 +66,7 @@ var OrderComponent = React.createClass({
 
 						<div className="makeorder col-md-4 col-md-offset-7">
 
-							<span>total: ${this.state.total}</span>
+							<span>total: ${this.props.total}</span>
 
 							<span><button className="btn btn-default">Order</button></span>
 						</div>
