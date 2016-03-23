@@ -11,13 +11,18 @@ var OrderComponent = require('./order.jsx').OrderComponent;
 
 
 var CheckoutComponent = React.createClass({
-
 	mixins: [Backbone.React.Component.mixin],
+	getInitialState: function() {
+		return {
+			orderCollection: this.props.orderCollection
+		};
+	},
 
 	removeCheckoutItem: function(item){
 		console.log("removing...");
 		var orderCollection = this.props.orderCollection;
 		orderCollection.remove(item);
+		this.setState({orderCollection: this.props.orderCollection});
 	},
 
 	render: function() {
