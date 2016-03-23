@@ -6,11 +6,21 @@ var _ = require('underscore');
 require('backbone-react-component');
 
 var OrderModel = require('../models/ordershoppingcart.js').OrderItemCollection;
+var CheckoutComponent = require('./checkout.jsx').CheckoutComponent;
 
 var OrderComponent = React.createClass({
 	mixins: [Backbone.React.Component.mixin],
 
+	goToCheckout: function(){
+		var orderCollection = this.getCollection().orderCollection;
+		var menuCollection = this.getCollection().menuCollection;
+		ReactDOM.render(
+  		React.createElement(CheckoutComponent, {orderCollection: orderCollection, menuCollection: menuCollection}),
+  		$('#checkoutApp')[0] );
 
+
+
+},
 	handleClick: function(item){
 
 		this.props.removeCartItem(item);
@@ -38,11 +48,8 @@ var OrderComponent = React.createClass({
 						<h3>Your Order</h3>
 				</div>
 				<div className="cart-item-list">
-
 							<ul>
-
 										{orderCollection.map(cartItem.bind(this))}
-
 							</ul>
 				</div>
 
@@ -62,16 +69,13 @@ var OrderComponent = React.createClass({
 
 
 					</div>
-					<div className="row">
 
-						<div className="makeorder col-md-4 col-md-offset-7">
-
-							<span>total: ${this.props.total}</span>
-
-							<span><button className="btn btn-default">Order</button></span>
-						</div>
+							<div className = "makeorder">
+							<span className="cart-total">total: ${this.props.total}</span>
+							<span><button onClick={this.goToCheckout} type="button" className="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-lg">Order</button></span>
+							</div>
 				</div>
-				</div>
+
 
 
 

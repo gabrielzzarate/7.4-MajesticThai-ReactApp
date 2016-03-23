@@ -1,3 +1,4 @@
+//3rd party
 var $ = require('jQuery');
 var React = require('react');
 var ReactDOM = require('react-dom');
@@ -13,7 +14,7 @@ var menuData = require('../menuJSON.js').menu;
 
 
 
-// menu component that holds the state of the application
+// parent menu component that holds the state of the application
 
 var MenuComponent = React.createClass({
 	mixins: [Backbone.React.Component.mixin],

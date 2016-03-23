@@ -10,18 +10,13 @@ require('backbone-react-component');
 
 var MenuSection = React.createClass({
 	mixins: [Backbone.React.Component.mixin],
-	getInitialState: function() {
-	    return {
-	        total: this.getCollection().orderCollection.cartTotal()
 
-	    };
-	},
 
 	handleOrder: function(item){
 		var orderCollection = this.getCollection().orderCollection;
 		this.props.addMenuItem(item);
 		this.props.totalCartItems(item);
-		this.setState({total: orderCollection.cartTotal()});
+
 
 	},
 	render: function() {

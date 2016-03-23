@@ -249,7 +249,19 @@ body {
         text-align: center;
     }
 }
-.btn-default {
+.cart {
+    height: 100%;
+}
+.makeorder {
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+
+    .cart-total {
+        margin-right: 10px;
+    }
+}
+.btn-success {
     background-color: rgb(203, 69, 66);
     display: inline-block;
     color: white;
@@ -527,3 +539,10 @@ footer {
 .footer-logo {
     margin-bottom: 15px;
 }
+
+
+
+////////////////////////////
+// checkout modal styles
+///////////////////////////
+

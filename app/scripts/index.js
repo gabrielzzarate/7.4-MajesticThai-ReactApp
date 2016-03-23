@@ -1,3 +1,4 @@
+window.jQuery = $ = require('jquery');
 var $ = require('jquery');
 var React = require('react');
 var ReactDOM = require('react-dom');
@@ -8,6 +9,7 @@ var models = require('./models/menu.js');
 var collapse = require('./collapse.js');
 var tooltip = require('./tooltip.js');
 var router = require('./router');
+var bootstrap = require('bootstrap-sass/assets/javascripts/bootstrap.js');
 
 
 
@@ -41,6 +43,8 @@ $(function(){
     	$('.icon-show3').toggleClass('hidden');
 
     });
+   $('#myModal').modal();
+
 });
 
 

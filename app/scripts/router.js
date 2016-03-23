@@ -11,6 +11,7 @@ var MenuModels = require('./models/menu.js');
 var menuData = require('./menuJSON.js').menu;
 var OrderComponent = require('./components/order.jsx');
 var OrderModel = require('./models/ordershoppingcart.js');
+var CheckoutComponent = require('./components/checkout.jsx').CheckoutComponent;
 
 
 
@@ -24,13 +25,22 @@ var OrderModel = require('./models/ordershoppingcart.js');
 var Router = Backbone.Router.extend({
   routes: {
     '': 'menu',
+    //'checkout/': 'checkout'
   },
 
   menu: function(){
   	ReactDOM.render(
   		menuComponent,
   		$('#menuApp')[0] );
-  	}
+  	},
+  // checkout: function(){
+  // 	ReactDOM.render(
+  // 		<CheckoutComponent />,
+  // 		$('#menuApp')[0] );
+  // 	$('#myModal').modal();
+  // }
+
+
 });
 
 module.exports = new Router();
