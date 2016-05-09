@@ -53,34 +53,25 @@ var MenuComponent = React.createClass({
 					<h1>Our Menu</h1>
 
 	  		<div className="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-			  <div className="panel panel-default">
-			    <div className="panel-heading menu-section-container" role="tab" id="headingOne">
-			      <h4 className="panel-title">
-			        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-			            Popular Items
-			        </a>
-			      </h4>
-			    </div>
-			    <div id="collapseOne" className="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-			      <div className="panel-body">
-			       		<MenuSectionComponent addMenuItem={this.addMenuItem} category={this.state.category} totalCartItems={this.totalCartItems}/>
-			      </div>
-			    </div>
-			  </div>
+
 			  <div className="panel panel-default">
 			    <div className="panel-heading menu-section-container" role="tab" id="headingTwo">
 			      <h4 className="panel-title">
-			        <a onClick={this.setDataCategory.bind(this, "appetizers")} className="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+			        <a onClick={this.setDataCategory.bind(this, "appetizers")} className="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
 			          Appetizers
+			        </a> <a onClick={this.setDataCategory.bind(this, "entrée")} className="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseThree">
+			          Entrees
+			        </a> <a onClick={this.setDataCategory.bind(this, "Side Orders")} className="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseThree">
+			          Side Orders
 			        </a>
 			      </h4>
 			    </div>
-			    <div id="collapseTwo" className="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+			    <div id="collapseTwo" className="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
 			      <div className="panel-body">
 			        	<MenuSectionComponent addMenuItem={this.addMenuItem} category ={this.state.category} totalCartItems={this.totalCartItems}/>
 			      </div>
 			    </div>
-			  </div>
+			  </div> {/*
 			  <div className="panel panel-default">
 			    <div className="panel-heading menu-section-container" role="tab" id="headingThree">
 			      <h4 className="panel-title">
@@ -89,7 +80,7 @@ var MenuComponent = React.createClass({
 			        </a>
 			      </h4>
 			    </div>
-			    <div id="collapseThree" className="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+			    <div id="collapseThree" className="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
 			      <div className="panel-body">
 			       		<MenuSectionComponent addMenuItem={this.addMenuItem} category = {this.state.category} totalCartItems={this.totalCartItems}/>
 			      </div>
@@ -108,7 +99,7 @@ var MenuComponent = React.createClass({
 			       		<MenuSectionComponent addMenuItem={this.addMenuItem} category = {this.state.category} totalCartItems={this.totalCartItems}/>
 			      </div>
 			    </div>
-			  </div>
+			  </div> */}
 			</div>
 		</div>
 			<div className="page-header col-md-3">
