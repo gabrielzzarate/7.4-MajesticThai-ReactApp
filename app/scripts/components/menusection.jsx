@@ -23,7 +23,7 @@ var MenuSection = React.createClass({
 		var menuItems = function(item) {
 			return (
 
-					<div key={item.get("cid")} className="col-md-6">
+					<div key={item.cid} className="col-md-6">
 					<div>
 							<div className="menu-item-title">
 							<h4 className="menu-item-content">{item.get("title")}</h4><p className="item-price">${item.get("price")}</p>
