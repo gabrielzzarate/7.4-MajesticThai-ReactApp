@@ -14,8 +14,9 @@ var OrderComponent = React.createClass({
 	goToCheckout: function(){
 		var orderCollection = this.getCollection().orderCollection;
 		var menuCollection = this.getCollection().menuCollection;
+		var total = this.props.total;
 		ReactDOM.render(
-  		React.createElement(CheckoutComponent, {orderCollection: orderCollection, menuCollection: menuCollection}),
+  		React.createElement(CheckoutComponent, {total: total, orderCollection: orderCollection, menuCollection: menuCollection}),
   		$('#checkoutApp')[0] );
 
 

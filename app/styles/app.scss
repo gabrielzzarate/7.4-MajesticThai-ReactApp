@@ -261,14 +261,19 @@ body {
     bottom: 0;
     padding: 10px;
 
-    .cart-total {
-        margin-right: 10px;
-    }
+
 }
+ .cart-total {
+        margin-right: 30px;
+    }
 .btn-success {
     background-color: rgb(203, 69, 66);
     display: inline-block;
     color: white;
+    border: rgb(203, 69, 66);
+    &:hover, :active {
+        background-color: gray;
+    }
 }
 
 

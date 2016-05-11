@@ -40,12 +40,9 @@ var CheckoutComponent = React.createClass({
 						        <h4 className="modal-title" id="myModalLabel">Checkout</h4>
 						      </div>
 						      <div className="modal-body">
-						      	<div className="col-md-4">
-						      		<p>pay online build strip authentication here</p>
-						      	</div>
-						      	<div className="col-md-8">
-						      	</div>
+						      	<ul>
 						      	<CheckoutItems orderCollection = {this.props.orderCollection} removeCheckoutItem={this.removeCheckoutItem} />
+						      	</ul>
 
 						      </div>
 						      <div className="modal-footer">
