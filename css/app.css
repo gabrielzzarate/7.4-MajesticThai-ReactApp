@@ -5946,13 +5946,17 @@ body {
   position: absolute;
   bottom: 0;
   padding: 10px; }
-  .makeorder .cart-total {
-    margin-right: 10px; }
+
+.cart-total {
+  margin-right: 30px; }
 
 .btn-success {
   background-color: #cb4542;
   display: inline-block;
-  color: white; }
+  color: white;
+  border: #cb4542; }
+  .btn-success:hover, .btn-success :active {
+    background-color: gray; }
 
 .order-item {
   list-style-type: none;
